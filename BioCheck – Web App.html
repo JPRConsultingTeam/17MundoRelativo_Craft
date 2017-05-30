@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0037)https://biocheck.net/app/#!/dashboard -->
+<<<<<<< HEAD
 <html ng-app="biocheckUserApp" class="no-js ng-scope k-webkit k-webkit58"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>  <title>BioCheck – Web App</title> <meta name="description" content=""> <meta name="viewport" content="maximum-scale=1,user-scalable=no,width=1024"> <link href="./BioCheck – Web App_files/css" rel="stylesheet" type="text/css"> <link rel="stylesheet" href="./BioCheck – Web App_files/style.1893d539.css"> <link rel="stylesheet" href="./BioCheck – Web App_files/bootstrap.min.css"> <link rel="stylesheet" href="./BioCheck – Web App_files/cropper.css"> <link rel="stylesheet" href="./BioCheck – Web App_files/jquery.nouislider.css"> <link type="text/css" rel="stylesheet" href="./BioCheck – Web App_files/jquery.pagewalkthrough.css"> <link rel="stylesheet" href="./BioCheck – Web App_files/vendor.61fde616.css"> <link rel="stylesheet" href="./BioCheck – Web App_files/main.a596ade8.css"> <link rel="stylesheet" ng-href="styles/themes/themeTemplate.css" href="./BioCheck – Web App_files/themeTemplate.css"> <script type="text/javascript" async="" src="./BioCheck – Web App_files/chat_info.js.descarga"></script><script type="text/javascript" async="" src="./BioCheck – Web App_files/chat_info.js.descarga"></script><script type="text/javascript" async="" src="./BioCheck – Web App_files/chat_info.js.descarga"></script><script async="" src="./BioCheck – Web App_files/analytics.js.descarga"></script><script src="./BioCheck – Web App_files/js"></script>  <script type="text/javascript">MessageFormat.locale.es=function(n){return n===1?"one":"other"}
 </script><script type="text/javascript">// moment.js locale configuration
 // locale : spanish (es)
@@ -76,6 +77,84 @@
         }
     });
 }));
+=======
+<html ng-app="biocheckUserApp" class="no-js ng-scope k-webkit k-webkit58"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>  <title>BioCheck – Web App</title> <meta name="description" content=""> <meta name="viewport" content="maximum-scale=1,user-scalable=no,width=1024"> <link href="./BioCheck – Web App_files/css" rel="stylesheet" type="text/css"> <link rel="stylesheet" href="./BioCheck – Web App_files/style.1893d539.css"> <link rel="stylesheet" href="./BioCheck – Web App_files/bootstrap.min.css"> <link rel="stylesheet" href="./BioCheck – Web App_files/cropper.css"> <link rel="stylesheet" href="./BioCheck – Web App_files/jquery.nouislider.css"> <link type="text/css" rel="stylesheet" href="./BioCheck – Web App_files/jquery.pagewalkthrough.css"> <link rel="stylesheet" href="./BioCheck – Web App_files/vendor.61fde616.css"> <link rel="stylesheet" href="./BioCheck – Web App_files/main.a596ade8.css"> <link rel="stylesheet" ng-href="styles/themes/themeTemplate.css" href="./BioCheck – Web App_files/themeTemplate.css"> <script type="text/javascript" async="" src="./BioCheck – Web App_files/chat_info.js.descarga"></script><script type="text/javascript" async="" src="./BioCheck – Web App_files/chat_info.js.descarga"></script><script type="text/javascript" async="" src="./BioCheck – Web App_files/chat_info.js.descarga"></script><script async="" src="./BioCheck – Web App_files/analytics.js.descarga"></script><script src="./BioCheck – Web App_files/js"></script>  <script type="text/javascript">MessageFormat.locale.es=function(n){return n===1?"one":"other"}
+</script><script type="text/javascript">// moment.js locale configuration
+// locale : spanish (es)
+// author : Julio Napurí : https://github.com/julionc
+
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['moment'], factory); // AMD
+    } else if (typeof exports === 'object') {
+        module.exports = factory(require('../moment')); // Node
+    } else {
+        factory(window.moment); // Browser global
+    }
+}(function (moment) {
+    var monthsShortDot = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split('_'),
+        monthsShort = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_');
+
+    return moment.defineLocale('es', {
+        months : 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split('_'),
+        monthsShort : function (m, format) {
+            if (/-MMM-/.test(format)) {
+                return monthsShort[m.month()];
+            } else {
+                return monthsShortDot[m.month()];
+            }
+        },
+        weekdays : 'domingo_lunes_martes_miércoles_jueves_viernes_sábado'.split('_'),
+        weekdaysShort : 'dom._lun._mar._mié._jue._vie._sáb.'.split('_'),
+        weekdaysMin : 'Do_Lu_Ma_Mi_Ju_Vi_Sá'.split('_'),
+        longDateFormat : {
+            LT : 'H:mm',
+            L : 'DD/MM/YYYY',
+            LL : 'D [de] MMMM [de] YYYY',
+            LLL : 'D [de] MMMM [de] YYYY LT',
+            LLLL : 'dddd, D [de] MMMM [de] YYYY LT'
+        },
+        calendar : {
+            sameDay : function () {
+                return '[hoy a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
+            },
+            nextDay : function () {
+                return '[mañana a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
+            },
+            nextWeek : function () {
+                return 'dddd [a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
+            },
+            lastDay : function () {
+                return '[ayer a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
+            },
+            lastWeek : function () {
+                return '[el] dddd [pasado a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
+            },
+            sameElse : 'L'
+        },
+        relativeTime : {
+            future : 'en %s',
+            past : 'hace %s',
+            s : 'unos segundos',
+            m : 'un minuto',
+            mm : '%d minutos',
+            h : 'una hora',
+            hh : '%d horas',
+            d : 'un día',
+            dd : '%d días',
+            M : 'un mes',
+            MM : '%d meses',
+            y : 'un año',
+            yy : '%d años'
+        },
+        ordinal : '%dº',
+        week : {
+            dow : 1, // Monday is the first day of the week.
+            doy : 4  // The week that contains Jan 4th is the first week of the year.
+        }
+    });
+}));
+>>>>>>> acfefcd85cd9b5db2c29f40060be2bc619ba65a9
 </script><script type="text/javascript" charset="UTF-8" src="./BioCheck – Web App_files/common.js.descarga"></script><script type="text/javascript" charset="UTF-8" src="./BioCheck – Web App_files/util.js.descarga"></script><link type="text/css" rel="stylesheet" href="./BioCheck – Web App_files/kendo.common.min.css"><link type="text/css" rel="stylesheet" href="./BioCheck – Web App_files/kendo.bootstrap.min.css"><link type="text/css" rel="stylesheet" href="./BioCheck – Web App_files/kendo.dataviz.min.css"><link type="text/css" rel="stylesheet" href="./BioCheck – Web App_files/kendo.dataviz.bootstrap.min.css"><script src="./BioCheck – Web App_files/kendo.all.min.js.descarga" async=""></script><script src="./BioCheck – Web App_files/kendo.culture.es-MX.min.js.descarga" async=""></script><script type="text/javascript" charset="UTF-8" src="./BioCheck – Web App_files/stats.js.descarga"></script></head><body ng-app="biocheckUserApp"> <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
